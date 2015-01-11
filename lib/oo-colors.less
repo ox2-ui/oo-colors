@@ -1,0 +1,53 @@
+@import "oo-color-variables.import.less";
+
+@color-keywords: "white", "warning", "critical", "action", "item", "backdrop", "item-alt", "backdrop-alt", "neutral", "neutral-tint", "neutral-light", "neutral-dim", "neutral-dark", "brand", "action", "warning", "critical", "positive", "negative", "primary-header", "action-menu", "action-menu-items", "main-menu-header", "main-menu-items", "main-menu-button";
+
+
+.generateColorHelpers(@counter) when (@counter > 0) {
+  .generateColorHelpers((@counter - 1));
+  @value: extract(@color-keywords, @counter);
+
+  [oo-Color~="back:@{value}"] {
+    background-color: @@value !important;
+  }
+
+  [oo-Color~="back:@{value}"][oo-Color~="has-clip"] {
+    color: @@value !important;
+  }
+
+  [oo-Color~="text:@{value}"] {
+    color: @@value !important;
+  }
+
+  [oo-Color~="border:@{value}"] {
+    border-color: @@value !important;
+  }
+
+  [oo-Color~="outline:@{value}"] {
+    outline-color: @@value !important;
+  }
+
+  //
+  //      XXX required due to some compatibility issues with using attributes on components instead of classes
+  //
+
+  @selector-class-back: ~'.oo-Color--back-@{value}';
+  @selector-class-text: ~'.oo-Color--text-@{value}';
+  @selector-class-border: ~'.oo-Color--border-@{value}';
+
+  @{selector-class-back} {
+    background-color: @@value !important;
+  }
+
+  @{selector-class-text} {
+    color: @@value !important;
+  }
+
+  @{selector-class-border} {
+    border-color: @@value !important;
+  }
+
+}
+
+.generateColorHelpers(length(@color-keywords));
+
