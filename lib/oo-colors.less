@@ -1,7 +1,5 @@
 @import "oo-color-variables.import.less";
 
-@color-keywords: "white", "warning", "critical", "action", "item", "backdrop", "item-alt", "backdrop-alt", "neutral", "neutral-tint", "neutral-light", "neutral-dim", "neutral-dark", "brand", "action", "warning", "critical", "positive", "negative", "primary-header", "action-menu", "action-menu-items", "main-menu-header", "main-menu-items", "main-menu-button";
-
 
 .generateColorHelpers(@counter) when (@counter > 0) {
   .generateColorHelpers((@counter - 1));
