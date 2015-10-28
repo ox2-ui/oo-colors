@@ -45,6 +45,12 @@
     border-color: @@value !important;
   }
 
+  @selector-test-back: ~'[color\:@{value}]';
+
+  @{selector-test-back} {
+    background-color: @@value !important;
+  }
+
 }
 
 .generateColorHelpers(length(@color-keywords));
