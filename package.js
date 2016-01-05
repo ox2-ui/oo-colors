@@ -1,7 +1,7 @@
 Package.describe({
   name: 'ox2:colors',
   summary: 'TESTING_DO_NOT_USE  Color',
-  version: '1.3.0',
+  version: '1.4.0',
   git: ' /* Fill me in! */ '
 });
 
