@@ -58,6 +58,7 @@
 
   @selector-test2-back: ~'.color\:@{value}';
   @selector-test2-text: ~'.text-color\:@{value}';
+  @selector-test2-border: ~'.border-color\:@{value}';
 
   @{selector-test2-back} {
     background-color: @@value !important;
@@ -65,6 +66,10 @@
 
   @{selector-test2-text} {
     color: @@value !important;
+  }
+
+  @{selector-test2-border} {
+    border-color: @@value !important;
   }
 
 }
