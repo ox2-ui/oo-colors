@@ -1,7 +1,7 @@
 Package.describe({
   name: 'ox2:colors',
   summary: 'DO NOT USE',
-  version: '1.7.0',
+  version: '1.8.0',
   git: ' /* Fill me in! */ '
 });
 
@@ -14,11 +14,11 @@ Package.onUse(function(api) {
   // Core
   api.use([
     'ecmascript',
-    'session'
+    'session',
+    'less'
     ]);
   // 3rd party
   api.use([
-    'lauricio:less-autoprefixer@2.5.0_3',
     'ox2:inject-style@1.0.0'
     ]);
   api.addFiles('lib/oo-color-variables.import.less', C);
