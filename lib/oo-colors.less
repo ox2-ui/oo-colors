@@ -61,10 +61,17 @@
   }
 
   @selector-test2-back: ~'.color\:@{value}';
+  @selector-test2-back2: ~'.back-color\:@{value}';
   @selector-test2-text: ~'.text-color\:@{value}';
   @selector-test2-border: ~'.border-color\:@{value}';
+  @selector-test2-fill: ~'.fill\:@{value}';
+  @selector-test2-fill2: ~'.fill-color\:@{value}';
 
   @{selector-test2-back} {
+    background-color: @@value !important;
+  }
+
+  @{selector-test2-back2} {
     background-color: @@value !important;
   }
 
@@ -74,6 +81,14 @@
 
   @{selector-test2-border} {
     border-color: @@value !important;
+  }
+
+  @{selector-test2-fill} {
+    fill: @@value !important;
+  }
+
+  @{selector-test2-fill2} {
+    fill: @@value !important;
   }
 
 }
